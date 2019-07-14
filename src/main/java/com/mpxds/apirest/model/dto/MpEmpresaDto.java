@@ -4,15 +4,16 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CNPJ;
 
-public class MpEmpresaDto {
+@SuppressWarnings("deprecation")
+public class MpEmpresaDTO {
 	//
 	private Long id;
 	private String razaoSocial;
 	private String cnpj;
 
-	public MpEmpresaDto() { }	
+	public MpEmpresaDTO() { }	
 	
-	public MpEmpresaDto(Long id, String razaoSocial, String cnpj) {
+	public MpEmpresaDTO(Long id, String razaoSocial, String cnpj) {
 		//
 		super();
 		

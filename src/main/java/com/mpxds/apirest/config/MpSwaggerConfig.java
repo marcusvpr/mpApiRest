@@ -23,7 +23,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+public class MpSwaggerConfig {
 
 	private final ResponseMessage m201 = customMessage1();
 	private final ResponseMessage m204put = simpleMessage(204, "Atualização ok");

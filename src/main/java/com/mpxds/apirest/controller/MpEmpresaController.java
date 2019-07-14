@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mpxds.apirest.model.dto.MpEmpresaDto;
+import com.mpxds.apirest.model.dto.MpEmpresaDTO;
 import com.mpxds.apirest.response.MpResponse;
 
 import io.swagger.annotations.ApiOperation;
@@ -24,10 +24,10 @@ public class MpEmpresaController {
 
 	@ApiOperation(value="Cadastra uma Empresa")
 	@PostMapping
-	public ResponseEntity<MpResponse<MpEmpresaDto>> cadastrar(@Valid @RequestBody MpEmpresaDto mpEmpresaDto,
+	public ResponseEntity<MpResponse<MpEmpresaDTO>> cadastrar(@Valid @RequestBody MpEmpresaDTO mpEmpresaDto,
 																										BindingResult result) {
 		//
-		MpResponse<MpEmpresaDto> mpResponse = new MpResponse<MpEmpresaDto>();
+		MpResponse<MpEmpresaDTO> mpResponse = new MpResponse<MpEmpresaDTO>();
 
 		if (result.hasErrors()) {
 			//
@@ -44,15 +44,15 @@ public class MpEmpresaController {
 	
 	@ApiOperation(value="Retorna uma lista de Empresas")
 	@GetMapping("/lista")
-	public List<MpEmpresaDto> listaMpEmpresaDtos() {
+	public List<MpEmpresaDTO> listaMpEmpresaDtos() {
 		//
-		List<MpEmpresaDto> mpEmpresaDtoList = new ArrayList<MpEmpresaDto>(); 
+		List<MpEmpresaDTO> mpEmpresaDtoList = new ArrayList<MpEmpresaDTO>(); 
 		
-		mpEmpresaDtoList.add(new MpEmpresaDto(1L, "Empresa A", "1234567890"));
-		mpEmpresaDtoList.add(new MpEmpresaDto(2L, "Empresa B", "1111167890"));
-		mpEmpresaDtoList.add(new MpEmpresaDto(3L, "Empresa C", "2222267890"));
-		mpEmpresaDtoList.add(new MpEmpresaDto(4L, "Empresa D", "3333367890"));
-		mpEmpresaDtoList.add(new MpEmpresaDto(5L, "Empresa E", "4444467890"));
+		mpEmpresaDtoList.add(new MpEmpresaDTO(1L, "Empresa A", "1234567890"));
+		mpEmpresaDtoList.add(new MpEmpresaDTO(2L, "Empresa B", "1111167890"));
+		mpEmpresaDtoList.add(new MpEmpresaDTO(3L, "Empresa C", "2222267890"));
+		mpEmpresaDtoList.add(new MpEmpresaDTO(4L, "Empresa D", "3333367890"));
+		mpEmpresaDtoList.add(new MpEmpresaDTO(5L, "Empresa E", "4444467890"));
 		
 //		return produtoRepository.findAll();
 		return mpEmpresaDtoList;

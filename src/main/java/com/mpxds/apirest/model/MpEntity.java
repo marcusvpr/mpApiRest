@@ -25,7 +25,7 @@ public abstract class MpEntity implements Serializable, Cloneable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	protected Long id;
+	protected Integer id;
 		
 	@Version
 	@Column(columnDefinition = "integer DEFAULT 0", nullable = false)
@@ -43,11 +43,9 @@ public abstract class MpEntity implements Serializable, Cloneable {
 
 	// 
 	
-	public MpEntity() {
-		//
-	}
+	public MpEntity() { }
 	
-	public MpEntity(Long id) {
+	public MpEntity(Integer id) {
 		//
 		super();
 		
@@ -56,8 +54,8 @@ public abstract class MpEntity implements Serializable, Cloneable {
 
 	// 
 	
-	public Long getId() { return id; }
-	public void setId(Long id) { this.id = id; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 
     public Long getVersion() { return this.version; }
     public void setVersion(Long newVersion) { this.version = newVersion; }

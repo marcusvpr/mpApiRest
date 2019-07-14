@@ -1,6 +1,7 @@
 package com.mpxds.apirest.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ import com.mpxds.apirest.model.enums.MpTipoCampo;
 @Table(name="mp_sistema_config", indexes = {
 		@Index(name = "index_mp_sistema_config_param", columnList = "parametro", unique = true)})
 public class MpSistemaConfig extends MpEntity {
+	//
 	private static final long serialVersionUID = 1L;
 	
 	private String parametro; 
@@ -33,6 +35,7 @@ public class MpSistemaConfig extends MpEntity {
 	// ---
 	
 	public MpSistemaConfig() {
+		//
 	  super();
 	}
 
@@ -43,6 +46,7 @@ public class MpSistemaConfig extends MpEntity {
 						, BigDecimal valorD
 						, Boolean indValor
 						, String objeto) {
+		//
 		this.parametro = parametro;
 		this.descricao = descricao;
 		this.mpTipoCampo = mpTipoCampo;
@@ -50,6 +54,9 @@ public class MpSistemaConfig extends MpEntity {
 		this.valorD = valorD;
 		this.indValor = indValor;
 		this.objeto = objeto;
+		//
+		this.setCreatedAt(new Date());
+		this.setUpdatedAt(new Date());
 	}
 
 	@NotNull(message = "Por favor, informe o PARAMÊTRO")

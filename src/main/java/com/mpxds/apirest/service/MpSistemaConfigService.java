@@ -1,4 +1,4 @@
-package com.mpxds.apirest.model;
+package com.mpxds.apirest.service;
 
 import java.util.List;
 import java.util.Optional;

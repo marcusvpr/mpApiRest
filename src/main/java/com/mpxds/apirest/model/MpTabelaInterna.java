@@ -1,5 +1,7 @@
 package com.mpxds.apirest.model;
 
+import java.util.Date;
+
 //import javax.persistence.Access;
 //import javax.persistence.AccessType;
 
@@ -48,11 +50,9 @@ public class MpTabelaInterna extends MpEntity {
 
 	// ---
 
-	public MpTabelaInterna() {
-		//
-	}
+	public MpTabelaInterna() { }
 
-	public MpTabelaInterna(Long id, MpTipoTabelaInterna mpTipoTabelaInterna, String codigo, String descricao) {
+	public MpTabelaInterna(Integer id, MpTipoTabelaInterna mpTipoTabelaInterna, String codigo, String descricao) {
 		//
 		super();
 
@@ -60,6 +60,9 @@ public class MpTabelaInterna extends MpEntity {
 		this.mpTipoTabelaInterna = mpTipoTabelaInterna;
 		this.codigo = codigo;
 		this.descricao = descricao;
+		//
+		this.setCreatedAt(new Date());
+		this.setUpdatedAt(new Date());
 	}
 
 	public MpTipoTabelaInterna getMpTipoTabelaInterna() { return this.mpTipoTabelaInterna; }
